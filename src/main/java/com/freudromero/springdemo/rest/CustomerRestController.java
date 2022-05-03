@@ -45,5 +45,12 @@ public class CustomerRestController {
        return theCustomer;
     }
 
+    // Add mapping for PUT /customers - update existing customer
+    @PutMapping("/customers")
+    public Customer updateCustomer(@RequestBody Customer theCustomer) {
+        customerService.saveCustomer(theCustomer);
+        return theCustomer;
+    }
+
 
 }
